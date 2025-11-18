@@ -1,0 +1,495 @@
+/* ===================================
+   ESTILOS GERAIS
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #2563eb;
+    --cor-secundaria: #7c3aed;
+    --cor-destaque: #10b981;
+    --cor-fundo: #f8fafc;
+    --cor-texto: #1e293b;
+    --cor-texto-claro: #64748b;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --transicao-padrao: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* ===================================
+   NAVEGAÇÃO
+   =================================== */
+
+.navbar {
+    box-shadow: 0 2px 10px var(--cor-sombra);
+    transition: var(--transicao-padrao);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    transition: var(--transicao-padrao);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: white;
+    transition: var(--transicao-padrao);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+/* ===================================
+   SEÇÃO HERO (INICIAL)
+   =================================== */
+
+.secao-hero {
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.secao-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.texto-hero {
+    animation: surgirTexto 1s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.texto-subtitulo {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    animation: surgirTexto 1.2s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes surgirTexto {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   TÍTULOS DE SEÇÃO
+   =================================== */
+
+.titulo-secao {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 3rem;
+}
+
+.titulo-secao::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+    border-radius: 2px;
+}
+
+/* ===================================
+   SEÇÃO SOBRE MIM
+   =================================== */
+
+#sobre {
+    background-color: white;
+}
+
+.foto-perfil {
+    box-shadow: 0 10px 30px var(--cor-sombra);
+    border: 5px solid white;
+    transition: var(--transicao-padrao);
+}
+
+.foto-perfil:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
+}
+
+.texto-sobre {
+    font-size: 1.1rem;
+    color: var(--cor-texto-claro);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.lista-habilidades {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-habilidades li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: var(--cor-texto);
+    font-weight: 500;
+}
+
+.lista-habilidades li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--cor-destaque);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ===================================
+   SEÇÃO PROJETOS
+   =================================== */
+
+.secao-projetos {
+    background-color: var(--cor-fundo);
+}
+
+.card-projeto {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transicao-padrao);
+    box-shadow: 0 5px 15px var(--cor-sombra);
+}
+
+.card-projeto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+}
+
+.card-projeto img {
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transicao-padrao);
+}
+
+.card-projeto:hover img {
+    transform: scale(1.1);
+}
+
+.descricao-projeto {
+    color: var(--cor-texto-claro);
+    font-size: 0.95rem;
+    min-height: 60px;
+}
+
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tecnologias .badge {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    font-weight: 500;
+}
+
+.btn-ver-mais {
+    width: 100%;
+    font-weight: 600;
+    transition: var(--transicao-padrao);
+}
+
+.btn-ver-mais:hover {
+    transform: scale(1.05);
+}
+
+/* Animação de entrada dos projetos */
+.item-projeto {
+    opacity: 0;
+    animation: surgirProjeto 0.6s ease-out forwards;
+}
+
+.item-projeto:nth-child(1) { animation-delay: 0.1s; }
+.item-projeto:nth-child(2) { animation-delay: 0.2s; }
+.item-projeto:nth-child(3) { animation-delay: 0.3s; }
+.item-projeto:nth-child(4) { animation-delay: 0.4s; }
+.item-projeto:nth-child(5) { animation-delay: 0.5s; }
+.item-projeto:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes surgirProjeto {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   SEÇÃO CONTATO
+   =================================== */
+
+#contato {
+    background-color: white;
+}
+
+#formulario-contato .form-control {
+    border: 2px solid #e2e8f0;
+    padding: 12px;
+    border-radius: 8px;
+    transition: var(--transicao-padrao);
+    font-size: 1rem;
+}
+
+#formulario-contato .form-control:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+#formulario-contato .form-label {
+    font-weight: 600;
+    color: var(--cor-texto);
+    margin-bottom: 8px;
+}
+
+#btn-enviar {
+    padding: 12px 40px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: var(--transicao-padrao);
+}
+
+#btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.redes-sociais a {
+    transition: var(--transicao-padrao);
+}
+
+.redes-sociais a:hover {
+    transform: translateY(-3px);
+}
+
+#mensagem-feedback {
+    text-align: center;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+}
+
+#mensagem-feedback.sucesso {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 2px solid #10b981;
+    display: block;
+}
+
+#mensagem-feedback.erro {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 2px solid #ef4444;
+    display: block;
+}
+
+/* ===================================
+   RODAPÉ
+   =================================== */
+
+footer {
+    margin-top: 80px;
+}
+
+footer a {
+    transition: var(--transicao-padrao);
+}
+
+footer a:hover {
+    color: var(--cor-primaria) !important;
+    text-decoration: underline !important;
+}
+
+/* ===================================
+   BOTÕES PERSONALIZADOS
+   =================================== */
+
+.btn {
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: var(--transicao-padrao);
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+/* ===================================
+   RESPONSIVIDADE
+   =================================== */
+
+@media (max-width: 768px) {
+    .titulo-secao {
+        font-size: 2rem;
+    }
+    
+    .texto-hero {
+        font-size: 2rem;
+    }
+    
+    .texto-subtitulo {
+        font-size: 1.1rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .card-projeto img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .texto-hero {
+        font-size: 1.75rem;
+    }
+    
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+   ANIMAÇÕES E EFEITOS ADICIONAIS
+   =================================== */
+
+.oculto {
+    display: none !important;
+}
+
+.visivel {
+    display: block !important;
+}
+
+/* Efeito de pulsação para botões importantes */
+@keyframes pulsar {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+.btn-primary:focus {
+    animation: pulsar 1.5s infinite;
+}
+
+/* Efeito de carregamento */
+.carregando {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.carregando::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
