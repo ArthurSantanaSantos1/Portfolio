@@ -1,13 +1,13 @@
-Bem-vindo ao meu Portfólio!
+Portfólio Pessoal – Arthur Santana
 
-Este repositório contém o código-fonte do meu portfólio pessoal, um site criado para apresentar meus projetos, minhas habilidades e um pouco sobre quem eu sou.
-O objetivo é ter um espaço organizado, profissional e acessível para mostrar meu desenvolvimento na área de tecnologia.
+Este repositório reúne o código-fonte do meu portfólio profissional, desenvolvido com o objetivo de apresentar meus projetos, minhas competências técnicas e informações relevantes sobre minha trajetória na área de tecnologia. O site foi estruturado para oferecer uma navegação clara, organizada e responsiva, servindo como ponto central para consulta dos meus trabalhos e evolução técnica.
 
-Acesse o Portfólio Aqui
+Acesso ao Portfólio
 
+O portfólio pode ser visualizado no endereço:
 https://arthursantanasantos1.github.io/Portfolio/
 
-Tecnologias Utilizadas
+Tecnologias Empregadas
 
 HTML5
 
@@ -15,18 +15,42 @@ CSS3
 
 JavaScript
 
-Bootstrap (para facilitar o design e responsividade)
+Bootstrap
 
-Sobre o Projeto
+Font Awesome
 
-No site você encontrará:
+Descrição Geral do Projeto
 
-Minha apresentação pessoal
+O site apresenta:
 
-Lista dos meus projetos
+Introdução e apresentação pessoal
 
-Contato
+Seção dedicada aos projetos desenvolvidos
 
-Layout responsivo
+Informações de contato e redes profissionais
 
-Design limpo e fácil de navegar
+Layout totalmente responsivo
+
+Navegação otimizada com transições suaves
+
+Implementação de modo claro e escuro
+
+Atualizações Recentes
+
+As melhorias mais recentes incluem:
+
+Revisão do sistema de modo escuro e ajustes de contraste
+
+Correção dos caminhos de imagens e recursos estáticos
+
+Atualização da paleta de cores do menu de navegação
+
+Otimização do código CSS para melhor desempenho
+
+Ajustes no layout da seção de projetos
+
+Correções gerais de navegação e comportamento interativo
+
+Objetivo do Repositório
+
+Manter um espaço atualizado, profissional e acessível que reflita minha evolução como desenvolvedor, centralizando meus principais projetos e demonstrando minhas habilidades técnicas de forma clara e organizada.
