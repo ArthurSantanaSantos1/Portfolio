@@ -12,8 +12,8 @@ const inicializarSite = () => {
     configurarAnoAtual();
     configurarNavegacaoSuave();
     configurarBotoesVerMais();
-    configurarFormularioContato();
     configurarMenuAtivo();
+    configurarModoEscuro();
     exibirMensagemBoasVindas();
 };
 
@@ -330,99 +330,49 @@ const adicionarEstilosModal = () => {
 adicionarEstilosModal();
 
 // ===================================
-// FORMULÁRIO DE CONTATO
+// MODO ESCURO / CLARO
 // ===================================
 
-const configurarFormularioContato = () => {
-    const formulario = document.getElementById('formulario-contato');
-    const botaoEnviar = document.getElementById('btn-enviar');
-    const mensagemFeedback = document.getElementById('mensagem-feedback');
+const configurarModoEscuro = () => {
+    const botaoTema = document.getElementById('btn-tema');
+    const iconeTema = document.getElementById('icone-tema');
     
-    formulario.addEventListener('submit', (evento) => {
-        evento.preventDefault();
-        processarEnvioFormulario(formulario, botaoEnviar, mensagemFeedback);
+    // Verifica se há preferência salva no localStorage
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo === 'escuro') {
+        document.body.classList.add('dark-mode');
+        iconeTema.textContent = '☀️';
+    }
+    
+    // Adiciona evento de clique no botão
+    botaoTema.addEventListener('click', () => {
+        alternarTema(iconeTema);
     });
 };
 
-// Arrow Function para processar envio do formulário
-const processarEnvioFormulario = (formulario, botao, feedbackElemento) => {
-    // Obtém os valores dos campos
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
+// Arrow Function para alternar entre modo claro e escuro
+const alternarTema = (iconeTema) => {
+    document.body.classList.toggle('dark-mode');
     
-    // Validação básica
-    if (!nome || !email || !mensagem) {
-        exibirFeedback(feedbackElemento, '⚠️ Por favor, preencha todos os campos!', 'erro');
-        return;
+    // Atualiza o ícone
+    if (document.body.classList.contains('dark-mode')) {
+        iconeTema.textContent = '☀️';
+        localStorage.setItem('tema', 'escuro');
+        console.log('🌙 Modo escuro ativado');
+    } else {
+        iconeTema.textContent = '🌙';
+        localStorage.setItem('tema', 'claro');
+        console.log('☀️ Modo claro ativado');
     }
     
-    // Validação de email
-    if (!validarEmail(email)) {
-        exibirFeedback(feedbackElemento, '⚠️ Por favor, insira um e-mail válido!', 'erro');
-        return;
-    }
-    
-    // Validação de nome (mínimo 3 caracteres)
-    if (nome.length < 3) {
-        exibirFeedback(feedbackElemento, '⚠️ O nome deve ter pelo menos 3 caracteres!', 'erro');
-        return;
-    }
-    
-    // Validação de mensagem (mínimo 10 caracteres)
-    if (mensagem.length < 10) {
-        exibirFeedback(feedbackElemento, '⚠️ A mensagem deve ter pelo menos 10 caracteres!', 'erro');
-        return;
-    }
-    
-    // Simula envio do formulário
-    botao.classList.add('carregando');
-    botao.disabled = true;
-    botao.textContent = 'Enviando...';
-    
-    // Simula delay de envio (em produção, seria uma chamada à API ou envio de email)
-    setTimeout(() => {
-        // Remove o estado de carregamento
-        botao.classList.remove('carregando');
-        botao.disabled = false;
-        botao.textContent = 'Enviar Mensagem';
-        
-        // Exibe mensagem de sucesso
-        exibirFeedback(
-            feedbackElemento,
-            `✅ Obrigado, ${nome}! Sua mensagem foi enviada com sucesso! Em breve Arthur entrará em contato através do e-mail ${email}.`,
-            'sucesso'
-        );
-        
-        // Limpa o formulário
-        formulario.reset();
-        
-        // Log para demonstração
-        console.log('📨 Formulário enviado com sucesso!');
-        console.log('Dados recebidos:', { nome, email, mensagem });
-        
-        // Remove a mensagem após 7 segundos
-        setTimeout(() => {
-            feedbackElemento.style.display = 'none';
-        }, 7000);
-    }, 2000);
+    // Animação suave
+    document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
 };
 
-// Arrow Function para validar email
-const validarEmail = (email) => {
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regexEmail.test(email);
-};
-
-// Arrow Function para exibir feedback
-const exibirFeedback = (elemento, mensagem, tipo) => {
-    elemento.textContent = mensagem;
-    elemento.className = tipo;
-    elemento.style.display = 'block';
-    
-    // Animação de entrada
-    elemento.style.animation = 'surgirTexto 0.5s ease-out';
-};
+// ===================================
+// FORMULÁRIO DE CONTATO (REMOVIDO)
+// ===================================
+// Função removida conforme solicitado pelo usuário
 
 // ===================================
 // EFEITOS ADICIONAIS DE INTERATIVIDADE
