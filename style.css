@@ -19,6 +19,114 @@
     --transicao-padrao: all 0.3s ease;
 }
 
+/* Modo Escuro */
+body.dark-mode {
+    --cor-fundo: #0f172a;
+    --cor-texto: #f1f5f9;
+    --cor-texto-claro: #cbd5e1;
+    --cor-sombra: rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .navbar {
+    background-color: #1e293b !important;
+}
+
+body.dark-mode #sobre,
+body.dark-mode #contato {
+    background-color: #1e293b;
+}
+
+body.dark-mode .secao-projetos {
+    background-color: #0f172a;
+}
+
+body.dark-mode .card {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .card-projeto {
+    background-color: #1e293b;
+}
+
+body.dark-mode .form-control {
+    background-color: #334155;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #475569;
+    border-color: var(--cor-primaria);
+    color: #f1f5f9;
+}
+
+body.dark-mode .form-label {
+    color: #f1f5f9;
+}
+
+body.dark-mode footer {
+    background-color: #020617 !important;
+}
+
+body.dark-mode .titulo-secao {
+    color: #f1f5f9;
+}
+
+body.dark-mode .descricao-projeto {
+    color: #cbd5e1;
+}
+
+body.dark-mode .texto-sobre {
+    color: #cbd5e1;
+}
+
+body.dark-mode .lista-habilidades li {
+    color: #f1f5f9;
+}
+
+body.dark-mode .email-link {
+    color: var(--cor-primaria);
+}
+
+body.dark-mode .lead {
+    color: #cbd5e1;
+}
+body.dark-mode .card-projeto,
+body.dark-mode .card {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+}
+
+/* Títulos e textos dentro do card */
+body.dark-mode .card-title {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .descricao-projeto,
+body.dark-mode .card-text {
+    color: #cbd5e1 !important;
+}
+
+/* Botão “Ver Mais” no modo escuro */
+body.dark-mode .btn-ver-mais {
+    border-color: #f1f5f9;
+    color: #f1f5f9;
+}
+
+body.dark-mode .btn-ver-mais:hover {
+    background-color: #334155;
+}
+
+/* Badges no modo escuro (HTML, CSS, JS etc.) */
+body.dark-mode .tecnologias .badge {
+    background-color: #334155 !important;
+    color: #f1f5f9 !important;
+    border: 1px solid #475569;
+}
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -49,6 +157,7 @@ section {
     font-weight: 700;
     font-size: 1.5rem;
     letter-spacing: -0.5px;
+    color: white !important;
 }
 
 .nav-link {
@@ -56,6 +165,7 @@ section {
     margin: 0 10px;
     transition: var(--transicao-padrao);
     position: relative;
+    color: white !important;
 }
 
 .nav-link::after {
@@ -290,65 +400,109 @@ section {
     background-color: white;
 }
 
-#formulario-contato .form-control {
-    border: 2px solid #e2e8f0;
-    padding: 12px;
-    border-radius: 8px;
-    transition: var(--transicao-padrao);
-    font-size: 1rem;
+.email-destaque {
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+    border-radius: 15px;
 }
 
-#formulario-contato .form-control:focus {
-    border-color: var(--cor-primaria);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+.email-destaque svg {
+    color: var(--cor-primaria);
 }
 
-#formulario-contato .form-label {
+.email-link {
+    font-size: 1.3rem;
     font-weight: 600;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: var(--transicao-padrao);
+}
+
+.email-link:hover {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
+
+.btn-rede-social {
+    width: 120px;
+    height: 120px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    background: white;
+    border: 3px solid #e2e8f0;
+    transition: var(--transicao-padrao);
     color: var(--cor-texto);
-    margin-bottom: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px var(--cor-sombra);
 }
 
-#btn-enviar {
-    padding: 12px 40px;
+.btn-rede-social:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+.btn-rede-social svg {
+    transition: var(--transicao-padrao);
+}
+
+.btn-rede-social:hover svg {
+    transform: scale(1.1);
+}
+
+.rede-nome {
+    font-size: 14px;
     font-weight: 600;
-    border-radius: 8px;
-    transition: var(--transicao-padrao);
-}
-
-#btn-enviar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
-}
-
-.redes-sociais a {
-    transition: var(--transicao-padrao);
-}
-
-.redes-sociais a:hover {
-    transform: translateY(-3px);
-}
-
-#mensagem-feedback {
     text-align: center;
-    font-weight: 600;
-    padding: 15px;
-    border-radius: 8px;
-    display: none;
 }
 
-#mensagem-feedback.sucesso {
-    background-color: #d1fae5;
-    color: #065f46;
-    border: 2px solid #10b981;
-    display: block;
+body.dark-mode .btn-rede-social {
+    background: #334155;
+    border-color: #475569;
+    color: #f1f5f9;
 }
 
-#mensagem-feedback.erro {
-    background-color: #fee2e2;
-    color: #991b1b;
-    border: 2px solid #ef4444;
-    display: block;
+body.dark-mode .btn-rede-social:hover {
+    background: #475569;
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+/* Botão de tema */
+#btn-tema {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: var(--transicao-padrao);
+    border: 2px solid white;
+}
+
+#btn-tema:hover {
+    transform: rotate(180deg);
+    background-color: white;
+}
+
+#icone-tema {
+    display: inline-block;
+    transition: var(--transicao-padrao);
+}
+
+body.dark-mode #btn-tema {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #btn-tema:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ===================================
