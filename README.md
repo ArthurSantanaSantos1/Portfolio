@@ -7,6 +7,7 @@ Acesso ao Portfólio
 O portfólio pode ser visualizado no endereço:
 https://arthursantanasantos1.github.io/Portfolio/
 
+
 Tecnologias Empregadas
 
 HTML5
@@ -18,6 +19,8 @@ JavaScript
 Bootstrap
 
 Font Awesome
+
+
 
 Descrição Geral do Projeto
 
@@ -35,6 +38,8 @@ Navegação otimizada com transições suaves
 
 Implementação de modo claro e escuro
 
+
+
 Atualizações Recentes
 
 As melhorias mais recentes incluem:
@@ -50,6 +55,7 @@ Otimização do código CSS para melhor desempenho
 Ajustes no layout da seção de projetos
 
 Correções gerais de navegação e comportamento interativo
+
 
 Objetivo do Repositório
 
